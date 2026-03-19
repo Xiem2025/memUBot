@@ -17,7 +17,8 @@
     "slack": "Slack",
     "line": "Line",
     "feishu": "Feishu",
-    "settings": "Settings"
+    "settings": "Settings",
+    "qq": "QQ Guild"
   },
   "header": {
     "aiAssistant": "AI Assistant",
@@ -60,7 +61,6 @@
     "optional": "optional",
     "required": "required",
     "viewAll": "View All",
-    "refresh": "Refresh",
     "retry": "Retry",
     "back": "Back",
     "next": "Next",
@@ -109,10 +109,6 @@
       "registerError": "Registration failed, please try again",
       "passwordMismatch": "Passwords do not match",
       "passwordTooShort": "Password must be at least 6 characters",
-      "forgotPassword": "Forgot password?",
-      "enterEmailFirst": "Please enter your email address first",
-      "resetEmailSent": "Password reset email sent, please check your inbox",
-      "resetEmailError": "Failed to send reset email, please try again",
       "forgotPassword": "Forgot password?",
       "enterEmailFirst": "Please enter your email address first",
       "resetEmailSent": "Password reset email sent, please check your inbox",
@@ -219,6 +215,19 @@
         "appSecret": "App Secret",
         "appSecretPlaceholder": "Your app secret",
         "appSecretHint": "App Secret from Feishu Open Platform"
+      },
+      "qq": {
+        "title": "QQ Guild",
+        "appId": "Bot AppID",
+        "appIdPlaceholder": "Enter AppID",
+        "appIdHint": "Bot AppID from QQ Open Platform",
+        "appSecret": "App Secret",
+        "appSecretPlaceholder": "Enter App Secret",
+        "appSecretHint": "App Secret from QQ Open Platform",
+        "tokensHint": "Get AppID and AppSecret from QQ Open Platform",
+        "sandbox": "Use Sandbox Environment (Recommended)",
+        "sandboxHint": "Sandbox environment doesn't require IP whitelist. Production requires adding server IP to QQ Open Platform whitelist.",
+        "autoConnect": "Auto Connect"
       }
     },
     "memu": {
@@ -508,7 +517,8 @@
       "whatsapp": "Connect to WhatsApp to start chatting.",
       "slack": "Message the bot in Slack to start chatting.",
       "line": "Connect your Line bot to start chatting.",
-      "feishu": "Connect your bot and start chatting on Feishu."
+      "feishu": "Connect your bot and start chatting on Feishu.",
+      "qq": "Connect your bot and start chatting on QQ Guild."
     }
   },
   "status": {
@@ -550,7 +560,8 @@
       "telegram": "Send /bind <code> to the bot. Get code from Settings → Security.",
       "discord": "Mention the bot with @bot /bind <code>. Get code from Settings → Security.",
       "slack": "Use /bind <code> command or send @bot /bind <code>. Get code from Settings → Security.",
-      "feishu": "Send /bind <code> command to the bot in Feishu. Get code from Settings → Security."
+      "feishu": "Send /bind <code> command to the bot in Feishu. Get code from Settings → Security.",
+      "qq": "Send /bind <code> command to the bot on QQ Guild. Get code from Settings → Security."
     }
   },
   "time": {
@@ -588,5 +599,10 @@
   "agent": {
     "busySamePlatform": "⏳ Still processing your previous message. Please wait a moment.",
     "busyCrossPlatform": "⏳ Currently processing a message from {{platform}}. Please wait a moment."
+  },
+  "data": {
+    "folders": {
+      "qq": "QQ Guild"
+    }
   }
 }
