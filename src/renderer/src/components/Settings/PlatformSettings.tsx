@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { TelegramIcon, DiscordIcon, SlackIcon, FeishuIcon } from '../Icons/AppIcons'
+import { TelegramIcon, DiscordIcon, SlackIcon, FeishuIcon, QQIcon } from '../Icons/AppIcons'
 import { 
   AppSettings, 
   UnsavedChangesBar, 
@@ -44,7 +44,11 @@ export function PlatformSettings(): JSX.Element {
     settings.slackAutoConnect !== originalSettings.slackAutoConnect ||
     settings.feishuAppId !== originalSettings.feishuAppId ||
     settings.feishuAppSecret !== originalSettings.feishuAppSecret ||
-    settings.feishuAutoConnect !== originalSettings.feishuAutoConnect
+    settings.feishuAutoConnect !== originalSettings.feishuAutoConnect ||
+    settings.qqGuildAppID !== originalSettings.qqGuildAppID ||
+    settings.qqGuildAppSecret !== originalSettings.qqGuildAppSecret ||
+    settings.qqGuildSandbox !== originalSettings.qqGuildSandbox ||
+    settings.qqGuildAutoConnect !== originalSettings.qqGuildAutoConnect
 
   const handleDiscard = () => {
     setSettings({ ...originalSettings })
@@ -64,7 +68,11 @@ export function PlatformSettings(): JSX.Element {
         slackAutoConnect: settings.slackAutoConnect,
         feishuAppId: settings.feishuAppId,
         feishuAppSecret: settings.feishuAppSecret,
-        feishuAutoConnect: settings.feishuAutoConnect
+        feishuAutoConnect: settings.feishuAutoConnect,
+        qqGuildAppID: settings.qqGuildAppID,
+        qqGuildAppSecret: settings.qqGuildAppSecret,
+        qqGuildSandbox: settings.qqGuildSandbox,
+        qqGuildAutoConnect: settings.qqGuildAutoConnect
       })
       if (result.success) {
         setOriginalSettings({ ...originalSettings, ...settings })
@@ -277,6 +285,85 @@ export function PlatformSettings(): JSX.Element {
                 onChange={(e) => setSettings({ ...settings, feishuAppSecret: e.target.value })}
                 className="w-full px-3 py-2.5 rounded-xl bg-[var(--bg-input)] border border-[var(--border-color)] text-[13px] text-[var(--text-primary)] placeholder-[var(--text-placeholder)] focus:outline-none focus:border-[#3370FF]/50 focus:ring-2 focus:ring-[#3370FF]/10 transition-all"
               />
+            </div>
+          </div>
+        </div>
+
+        {/* QQ Guild Tokens */}
+        <div className="p-4 rounded-2xl bg-[var(--glass-bg)] backdrop-blur-xl border border-[#12B7F5]/30">
+          <div className="mb-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-md bg-gradient-to-br from-[#12B7F5] to-[#0099FF] flex items-center justify-center">
+                  <QQIcon className="w-3 h-3 text-white" />
+                </div>
+                <h4 className="text-[13px] font-medium text-[var(--text-primary)]">
+                  {t('settings.platforms.qq.title', 'QQ Guild')}
+                </h4>
+              </div>
+              {/* Auto Connect Toggle */}
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] text-[var(--text-muted)]">{t('settings.platforms.autoConnect')}</span>
+                <button
+                  onClick={() => setSettings({ ...settings, qqGuildAutoConnect: !settings.qqGuildAutoConnect })}
+                  className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                    settings.qqGuildAutoConnect ? 'bg-[#12B7F5]' : 'bg-[var(--bg-input)]'
+                  }`}
+                >
+                  <span
+                    className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${
+                      settings.qqGuildAutoConnect ? 'translate-x-4' : 'translate-x-0'
+                    }`}
+                  />
+                </button>
+              </div>
+            </div>
+            <p className="text-[11px] text-[var(--text-muted)] mt-1">
+              {t('settings.platforms.qq.tokensHint', '从 QQ 开放平台获取 AppID 和 AppSecret')}
+            </p>
+          </div>
+          <div className="space-y-3">
+            <div>
+              <label className="text-[11px] text-[var(--text-muted)] mb-1.5 block">{t('settings.platforms.qq.appID', 'App ID')}</label>
+              <input
+                type="text"
+                placeholder="1234567890"
+                value={settings.qqGuildAppID || ''}
+                onChange={(e) => setSettings({ ...settings, qqGuildAppID: e.target.value })}
+                className="w-full px-3 py-2.5 rounded-xl bg-[var(--bg-input)] border border-[var(--border-color)] text-[13px] text-[var(--text-primary)] placeholder-[var(--text-placeholder)] focus:outline-none focus:border-[#12B7F5]/50 focus:ring-2 focus:ring-[#12B7F5]/10 transition-all"
+              />
+            </div>
+            <div>
+              <label className="text-[11px] text-[var(--text-muted)] mb-1.5 block">{t('settings.platforms.qq.appSecret', 'App Secret')}</label>
+              <input
+                type="password"
+                placeholder={t('settings.platforms.qq.appSecretPlaceholder', 'Enter your App Secret')}
+                value={settings.qqGuildAppSecret || ''}
+                onChange={(e) => setSettings({ ...settings, qqGuildAppSecret: e.target.value })}
+                className="w-full px-3 py-2.5 rounded-xl bg-[var(--bg-input)] border border-[var(--border-color)] text-[13px] text-[var(--text-primary)] placeholder-[var(--text-placeholder)] focus:outline-none focus:border-[#12B7F5]/50 focus:ring-2 focus:ring-[#12B7F5]/10 transition-all"
+              />
+              <p className="text-[10px] text-[var(--text-muted)] mt-1">
+                {t('settings.platforms.qq.appSecretHint', 'QQ 开放平台提供的应用密钥')}
+              </p>
+            </div>
+            <div className="pt-2 pb-1">
+              <div className="flex items-start gap-2">
+                <input
+                  type="checkbox"
+                  id="qqSandbox"
+                  checked={settings.qqGuildSandbox !== false}
+                  onChange={(e) => setSettings({ ...settings, qqGuildSandbox: e.target.checked })}
+                  className="w-4 h-4 mt-0.5 rounded border-[var(--border-color)] text-[#12B7F5] focus:ring-[#12B7F5]/20"
+                />
+                <div className="flex-1">
+                  <label htmlFor="qqSandbox" className="text-[11px] text-[var(--text-primary)] cursor-pointer font-medium">
+                    {t('settings.platforms.qq.sandbox', 'Use Sandbox Environment (Recommended)')}
+                  </label>
+                  <p className="text-[10px] text-[var(--text-muted)] mt-0.5 leading-relaxed">
+                    {t('settings.platforms.qq.sandboxHint', 'Sandbox environment does not require IP whitelist, suitable for development and testing. Production environment requires adding server IP to QQ Open Platform whitelist.')}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
