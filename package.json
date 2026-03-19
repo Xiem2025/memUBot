@@ -42,7 +42,9 @@
     "remark-gfm": "^4.0.1",
     "screenshot-desktop": "^1.15.3",
     "socks-proxy-agent": "^8.0.5",
-    "zustand": "^5.0.10"
+    "zustand": "^5.0.10",
+    "qq-guild-bot": "^2.9.5",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
     "@electron/notarize": "^3.1.1",
