@@ -17,7 +17,8 @@
     "slack": "Slack",
     "line": "Line",
     "feishu": "飞书",
-    "settings": "設定"
+    "settings": "設定",
+    "qq": "QQ Guild"
   },
   "header": {
     "aiAssistant": "AI アシスタント",
@@ -60,7 +61,6 @@
     "optional": "任意",
     "required": "必須",
     "viewAll": "すべて表示",
-    "refresh": "更新",
     "retry": "再試行",
     "back": "戻る",
     "next": "次へ",
@@ -109,10 +109,6 @@
       "registerError": "登録失敗、再試行してください",
       "passwordMismatch": "パスワードが一致しません",
       "passwordTooShort": "パスワードは6文字以上必要です",
-      "forgotPassword": "パスワードを忘れた場合",
-      "enterEmailFirst": "まずメールアドレスを入力してください",
-      "resetEmailSent": "パスワードリセットメールを送信しました。受信箱を確認してください",
-      "resetEmailError": "リセットメールの送信に失敗しました。再試行してください",
       "forgotPassword": "パスワードを忘れた場合",
       "enterEmailFirst": "まずメールアドレスを入力してください",
       "resetEmailSent": "パスワードリセットメールを送信しました",
@@ -219,6 +215,19 @@
         "appSecret": "App Secret",
         "appSecretPlaceholder": "アプリシークレット",
         "appSecretHint": "飞书オープンプラットフォームのApp Secret"
+      },
+      "qq": {
+        "title": "QQ Guild",
+        "appId": "Bot AppID",
+        "appIdPlaceholder": "AppID を入力",
+        "appIdHint": "QQ オープンプラットフォームのボット AppID",
+        "appSecret": "App Secret",
+        "appSecretPlaceholder": "App Secret を入力",
+        "appSecretHint": "QQ オープンプラットフォームのアプリシークレット",
+        "tokensHint": "QQ オープンプラットフォームから AppID と AppSecret を取得",
+        "sandbox": "サンドボックス環境を使用（推奨）",
+        "sandboxHint": "サンドボックス環境では IP ホワイトリストは不要です。本番環境ではサーバー IP を QQ オープンプラットフォームのホワイトリストに追加する必要があります。",
+        "autoConnect": "自動接続"
       }
     },
     "memu": {
@@ -487,7 +496,8 @@
       "whatsapp": "WhatsApp に接続してチャットを始めましょう。",
       "slack": "Slack でボットにメッセージを送ってチャットを始めましょう。",
       "line": "Line ボットを接続してチャットを始めましょう。",
-      "feishu": "ボットを接続して Feishu でチャットを始めましょう。"
+      "feishu": "ボットを接続して Feishu でチャットを始めましょう。",
+      "qq": "ボットを接続して、QQ Guild でチャットを開始してください。"
     }
   },
   "status": {
@@ -529,7 +539,8 @@
       "telegram": "ボットに /bind <コード> を送信。コードは 設定 → セキュリティ で取得",
       "discord": "@bot /bind <コード> でボットをメンション。コードは 設定 → セキュリティ で取得",
       "slack": "/bind <コード> コマンドを使用、または @bot /bind <コード> を送信。コードは 設定 → セキュリティ で取得",
-      "feishu": "ボットに /bind <コード> を送信。コードは 設定 → セキュリティ で取得"
+      "feishu": "ボットに /bind <コード> を送信。コードは 設定 → セキュリティ で取得",
+      "qq": "QQ Guild のボットに /bind <code> コマンドを送信してください。コードは 設定 → セキュリティ から取得できます。"
     }
   },
   "time": {
@@ -566,5 +577,10 @@
   "agent": {
     "busySamePlatform": "⏳ 前のメッセージを処理中です。しばらくお待ちください。",
     "busyCrossPlatform": "⏳ {{platform}} からのメッセージを処理中です。しばらくお待ちください。"
+  },
+  "data": {
+    "folders": {
+      "qq": "QQ Guild"
+    }
   }
 }

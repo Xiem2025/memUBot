@@ -17,7 +17,8 @@
     "slack": "Slack",
     "line": "Line",
     "feishu": "飞书",
-    "settings": "设置"
+    "settings": "设置",
+    "qq": "QQ"
   },
   "header": {
     "aiAssistant": "AI 助手",
@@ -60,7 +61,6 @@
     "optional": "可选",
     "required": "必填",
     "viewAll": "查看全部",
-    "refresh": "刷新",
     "retry": "重试",
     "back": "返回",
     "next": "下一步",
@@ -109,10 +109,6 @@
       "registerError": "注册失败，请重试",
       "passwordMismatch": "两次输入的密码不一致",
       "passwordTooShort": "密码长度至少为6位",
-      "forgotPassword": "忘记密码？",
-      "enterEmailFirst": "请先输入邮箱地址",
-      "resetEmailSent": "重置密码邮件已发送，请检查收件箱",
-      "resetEmailError": "发送重置邮件失败，请重试",
       "forgotPassword": "忘记密码？",
       "enterEmailFirst": "请先输入邮箱地址",
       "resetEmailSent": "重置密码邮件已发送，请查收",
@@ -219,6 +215,19 @@
         "appSecret": "App Secret",
         "appSecretPlaceholder": "您的应用密钥",
         "appSecretHint": "飞书开放平台的应用密钥"
+      },
+      "qq": {
+        "title": "QQ",
+        "appId": "AppID",
+        "appIdPlaceholder": "请输入 AppID",
+        "appIdHint": "QQ 开放平台的机器人 AppID",
+        "appSecret": "App Secret",
+        "appSecretPlaceholder": "请输入 App Secret",
+        "appSecretHint": "QQ 开放平台提供的应用密钥",
+        "tokensHint": "从 QQ 开放平台获取 AppID 和 AppSecret",
+        "sandbox": "使用沙箱环境（推荐）",
+        "sandboxHint": "沙箱环境无需配置 IP 白名单，适合开发和测试。生产环境需要添加服务器 IP 到 QQ 开放平台白名单。",
+        "autoConnect": "自动连接"
       }
     },
     "memu": {
@@ -506,7 +515,8 @@
       "whatsapp": "连接 WhatsApp 开始聊天。",
       "slack": "在 Slack 中给机器人发消息开始聊天。",
       "line": "连接 Line 机器人开始聊天。",
-      "feishu": "连接机器人，在飞书上开始聊天。"
+      "feishu": "连接机器人，在飞书上开始聊天。",
+      "qq": "连接机器人，在 QQ 频道上开始聊天。"
     }
   },
   "status": {
@@ -548,7 +558,8 @@
       "telegram": "向机器人发送 /bind <绑定码>，绑定码可在 设置 → 安全 中获取",
       "discord": "@ 机器人并发送 @bot /bind <绑定码>，绑定码可在 设置 → 安全 中获取",
       "slack": "使用 /bind <绑定码> 命令，或发送 @bot /bind <绑定码>，绑定码可在 设置 → 安全 中获取",
-      "feishu": "向机器人发送 /bind <绑定码>，绑定码可在 设置 → 安全 中获取"
+      "feishu": "向机器人发送 /bind <绑定码>，绑定码可在 设置 → 安全 中获取",
+      "qq": "向机器人发送 /bind <绑定码>，绑定码可在 设置 → 安全 中获取"
     }
   },
   "time": {
@@ -585,5 +596,10 @@
   "agent": {
     "busySamePlatform": "⏳ 正在处理上一条消息，请稍后再试。",
     "busyCrossPlatform": "⏳ 正在处理来自 {{platform}} 的消息，请稍后再试。"
+  },
+  "data": {
+    "folders": {
+      "qq": "QQ"
+    }
   }
 }
